@@ -24,10 +24,10 @@ import {
 } from 'lucide-react';
 
 const IMAGES = {
-  profile:"../images/profile.jpeg",
+  profile:"/images/profile.jpeg",
   project1: "https://lh3.googleusercontent.com/aida-public/AB6AXuAn-FdoVYSS_wepXxYrR41iFDphxGaTfOyL74KPHBmxvWcRPK8yPqlizl-FG4riMq66cjH73Py2eamY49w91RRvnyNnJr4JdBIItfkqxNIDYmoXjQ0FChm7YGlIYJg5HttuQwRmUhiAUqQUTF-55DPudvXpiWts84iA93V-BRYh0VvzQvnHpZbF8-lSlfRtlD-s7X8LVwTPL5eoVF9AOMxpu7CQYBUJxEomvTTx76Nm2dB8aCnOnYc7DmbQO0hqAGb74lqtR7rYNA",
-  project2: "../../images/crop.jpg",
-  project3:"../images/agentic.jpg"
+  project2: "/images/crop.jpg",
+  project3:"/images/agentic.jpg"
 };
 
 const TECH_STACK = [
