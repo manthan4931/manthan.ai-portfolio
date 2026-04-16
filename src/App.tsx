@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { 
   Terminal, 
@@ -20,7 +20,9 @@ import {
   Home, 
   Code, 
   FlaskConical,
-  ExternalLink
+  ExternalLink,
+  X,
+  Download
 } from 'lucide-react';
 
 const IMAGES = {
@@ -70,6 +72,16 @@ const PROJECTS = [
 ];
 
 export default function App() {
+  const [showResume, setShowResume] = useState(false);
+
+  const handleResumeClick = () => {
+    setShowResume(true);
+  };
+
+  const handleCloseResume = () => {
+    setShowResume(false);
+  };
+
   return (
     <div className="min-h-screen bg-background text-on-surface selection:bg-primary/20">
       <div className="grainy-overlay fixed inset-0 z-100" />
@@ -91,11 +103,17 @@ export default function App() {
                 {item}
               </a>
             ))}
-            <button className="bg-primary text-background px-4 py-1.5 rounded-xl font-bold text-xs tracking-tight hover:scale-95 active:scale-90 transition-all">
+            <button 
+              onClick={handleResumeClick}
+              className="bg-primary text-background px-4 py-1.5 rounded-xl font-bold text-xs tracking-tight hover:scale-95 active:scale-90 transition-all"
+            >
               RESUME
             </button>
           </nav>
-          <button className="md:hidden bg-primary text-background px-4 py-1.5 rounded-xl font-bold text-xs tracking-tight">
+          <button 
+            onClick={handleResumeClick}
+            className="md:hidden bg-primary text-background px-4 py-1.5 rounded-xl font-bold text-xs tracking-tight"
+          >
             RESUME
           </button>
         </div>
@@ -349,6 +367,81 @@ export default function App() {
           </a>
         ))}
       </nav>
+
+      {/* Resume Modal */}
+      {showResume && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-100 bg-black/80 backdrop-blur-md flex items-center justify-center p-4"
+          onClick={handleCloseResume}
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            className="bg-surface rounded-3xl border border-outline/30 max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col shadow-[0_0_60px_rgba(0,245,255,0.15)]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="flex justify-between items-center p-6 md:p-8 border-b border-outline/10">
+              <h3 className="text-xl md:text-2xl font-bold text-primary">RESUME / CV</h3>
+              <button
+                onClick={handleCloseResume}
+                className="text-on-surface-variant hover:text-primary transition-colors p-2"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            {/* Resume Content */}
+            <div className="flex-1 overflow-y-auto p-6 md:p-8">
+              {/* PDF Embed Option */}
+              <div className="space-y-6">
+                <div className="flex flex-col items-center justify-center py-12 bg-surface/50 rounded-2xl border border-dashed border-outline/30">
+                  <p className="text-on-surface-variant text-center mb-4">
+                    Resume file not configured yet
+                  </p>
+                  <a
+                    href="#Contact"
+                    onClick={handleCloseResume}
+                    className="text-primary font-bold text-sm hover:underline"
+                  >
+                    Contact me for resume
+                  </a>
+                </div>
+
+                {/* Alternative: Display resume as embedded document */}
+                {/* Uncomment this section once you have a resume PDF */}
+                {/* <iframe
+                  src="/resume.pdf"
+                  className="w-full h-[60vh] rounded-xl border border-outline/20"
+                  title="Resume"
+                /> */}
+              </div>
+            </div>
+
+            {/* Modal Footer */}
+            <div className="border-t border-outline/10 p-6 md:p-8 flex gap-4 justify-end bg-surface/50">
+              <button
+                onClick={handleCloseResume}
+                className="px-6 py-2.5 rounded-xl border border-outline/30 text-on-surface-variant hover:border-outline/50 transition-colors font-bold text-sm"
+              >
+                CLOSE
+              </button>
+              <a
+                href="/resume.pdf"
+                download
+                className="px-6 py-2.5 rounded-xl bg-primary text-background hover:scale-95 transition-transform font-bold text-sm flex items-center gap-2"
+              >
+                <Download className="w-4 h-4" />
+                DOWNLOAD
+              </a>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
     </div>
   );
 }
