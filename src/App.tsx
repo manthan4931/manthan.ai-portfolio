@@ -397,28 +397,225 @@ export default function App() {
 
             {/* Resume Content */}
             <div className="flex-1 overflow-y-auto p-6 md:p-8">
-              {/* PDF Embed Option */}
-              <div className="space-y-6">
-                <div className="flex flex-col items-center justify-center py-12 bg-surface/50 rounded-2xl border border-dashed border-outline/30">
-                  <p className="text-on-surface-variant text-center mb-4">
-                    Resume file not configured yet
-                  </p>
-                  <a
-                    href="#Contact"
-                    onClick={handleCloseResume}
-                    className="text-primary font-bold text-sm hover:underline"
-                  >
-                    Contact me for resume
-                  </a>
+              <div className="space-y-8 max-w-3xl mx-auto text-on-surface">
+                {/* Header */}
+                <div className="text-center border-b-2 border-primary pb-8">
+                  <h1 className="text-4xl font-bold mb-1">MANTHAN PRAJAPATI</h1>
+                  <p className="text-xl text-primary font-bold mb-4">AI/ML ENGINEER | AUTONOMOUS SYSTEMS SPECIALIST</p>
+                  <div className="flex flex-wrap justify-center gap-6 text-sm">
+                    <div className="flex items-center gap-2">
+                      <Mail className="w-4 h-4 text-primary" />
+                      <span>prajapatimanthan49@gmail.com</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Phone className="w-4 h-4 text-secondary" />
+                      <span>+91 9265896256</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4 text-secondary" />
+                      <span>Gandhinagar, Gujarat, India</span>
+                    </div>
+                  </div>
+                  <div className="flex justify-center gap-6 mt-4">
+                    <a href="https://github.com/manthan4931" className="text-primary hover:underline text-sm flex items-center gap-1">
+                      <Github className="w-4 h-4" /> GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/manthan-prajapati" className="text-primary hover:underline text-sm flex items-center gap-1">
+                      <Linkedin className="w-4 h-4" /> LinkedIn
+                    </a>
+                  </div>
                 </div>
 
-                {/* Alternative: Display resume as embedded document */}
-                {/* Uncomment this section once you have a resume PDF */}
-                {/* <iframe
-                  src="/resume.pdf"
-                  className="w-full h-[60vh] rounded-xl border border-outline/20"
-                  title="Resume"
-                /> */}
+                {/* Professional Summary */}
+                <div>
+                  <h2 className="text-lg font-bold text-primary mb-3 border-b border-outline/30 pb-2">PROFESSIONAL SUMMARY</h2>
+                  <p className="text-on-surface-variant leading-relaxed">
+                    Results-driven AI/ML Engineer with expertise in building production-ready autonomous agents, neural architectures, and intelligent systems. Specialized in Large Language Models (LLMs), Retrieval-Augmented Generation (RAG) pipelines, and natural language processing. Proven track record of designing scalable data pipelines and transforming unstructured data into actionable insights. Passionate about cutting-edge AI research and delivering solutions that solve real-world complexities.
+                  </p>
+                </div>
+
+                {/* Technical Skills */}
+                <div>
+                  <h2 className="text-lg font-bold text-primary mb-3 border-b border-outline/30 pb-2">TECHNICAL EXPERTISE</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="font-bold text-sm text-secondary mb-2">AI/ML Technologies</h4>
+                      <p className="text-sm text-on-surface-variant leading-relaxed">
+                        Large Language Models (LLM), Retrieval-Augmented Generation (RAG), Natural Language Processing (NLP), PyTorch, Autonomous Agents, Neural Networks, Transformer Architecture
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-sm text-secondary mb-2">Programming Languages</h4>
+                      <p className="text-sm text-on-surface-variant leading-relaxed">
+                        Python, JavaScript/TypeScript, SQL, Bash/PowerShell
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-sm text-secondary mb-2">Frameworks & Libraries</h4>
+                      <p className="text-sm text-on-surface-variant leading-relaxed">
+                        FastAPI, LangChain, Django, React, Vite, Motion, PyTorch, scikit-learn, Pandas, NumPy
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-sm text-secondary mb-2">Data & Infrastructure</h4>
+                      <p className="text-sm text-on-surface-variant leading-relaxed">
+                        Vector Databases, SQL Databases, Groq API, Whisper API, Git, API Integration
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-sm text-secondary mb-2">Specializations</h4>
+                      <p className="text-sm text-on-surface-variant leading-relaxed">
+                        Data Pipelines, Machine Learning Model Development, Data Engineering, Production Deployment
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Projects & Experience */}
+                <div>
+                  <h2 className="text-lg font-bold text-primary mb-4 border-b border-outline/30 pb-2">FEATURED PROJECTS & EXPERIENCE</h2>
+                  <div className="space-y-6">
+                    
+                    {/* Project 1 */}
+                    <div className="bg-surface/50 p-5 rounded-xl border border-outline/20">
+                      <div className="flex justify-between items-start mb-2">
+                        <div>
+                          <h4 className="font-bold text-base">AI Assistant For CommanderERP</h4>
+                          <p className="text-sm text-primary font-semibold">Autonomous ERP Knowledge System</p>
+                        </div>
+                        <span className="text-[10px] bg-primary/20 text-primary px-3 py-1 rounded-full">Production</span>
+                      </div>
+                      <p className="text-sm text-on-surface-variant mb-3 leading-relaxed">
+                        Architected and deployed an AI-powered ERP Assistant that automatically extracts, processes, and understands knowledge from YouTube videos of ERP software channels. Implemented a sophisticated speech-to-text transcription pipeline using Groq's high-performance Whisper model, transforming unstructured video content into a structured, searchable knowledge base.
+                      </p>
+                      <p className="text-sm text-on-surface-variant mb-3 leading-relaxed">
+                        Designed and implemented a Retrieval-Augmented Generation (RAG) pipeline enabling users to ask natural language questions and receive accurate, context-aware responses derived directly from video content. Achieved 98.4% accuracy across multiple languages through advanced embedding and semantic retrieval techniques.
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        <span className="text-[10px] bg-background px-3 py-1 rounded border border-primary/30 text-primary">Python</span>
+                        <span className="text-[10px] bg-background px-3 py-1 rounded border border-secondary/30 text-secondary">LangChain</span>
+                        <span className="text-[10px] bg-background px-3 py-1 rounded border border-secondary/30 text-secondary">Groq Whisper</span>
+                        <span className="text-[10px] bg-background px-3 py-1 rounded border border-secondary/30 text-secondary">Groq LLM</span>
+                        <span className="text-[10px] bg-background px-3 py-1 rounded border border-secondary/30 text-secondary">Vector DB</span>
+                        <span className="text-[10px] bg-background px-3 py-1 rounded border border-secondary/30 text-secondary">RAG</span>
+                      </div>
+                    </div>
+
+                    {/* Project 2 */}
+                    <div className="bg-surface/50 p-5 rounded-xl border border-outline/20">
+                      <div className="flex justify-between items-start mb-2">
+                        <div>
+                          <h4 className="font-bold text-base">Context-Based Emotional Analysis Engine</h4>
+                          <p className="text-sm text-primary font-semibold">Multi-layered NLP System</p>
+                        </div>
+                        <span className="text-[10px] bg-secondary/20 text-secondary px-3 py-1 rounded-full">Research</span>
+                      </div>
+                      <p className="text-sm text-on-surface-variant mb-3 leading-relaxed">
+                        Developed real-time NLP engine capable of detecting multi-layered emotional contexts in technical documentation with 98.4% accuracy. System processes content across multiple languages and cultural contexts, providing nuanced sentiment and emotional intelligence analysis.
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        <span className="text-[10px] bg-background px-3 py-1 rounded border border-primary/30 text-primary">PyTorch</span>
+                        <span className="text-[10px] bg-background px-3 py-1 rounded border border-secondary/30 text-secondary">FastAPI</span>
+                        <span className="text-[10px] bg-background px-3 py-1 rounded border border-secondary/30 text-secondary">Transformers</span>
+                      </div>
+                    </div>
+
+                    {/* Project 3 */}
+                    <div className="bg-surface/50 p-5 rounded-xl border border-outline/20">
+                      <div className="flex justify-between items-start mb-2">
+                        <div>
+                          <h4 className="font-bold text-base">Crop Prediction & Agricultural Analytics</h4>
+                          <p className="text-sm text-primary font-semibold">Machine Learning Model</p>
+                        </div>
+                        <span className="text-[10px] bg-secondary/20 text-secondary px-3 py-1 rounded-full">Deployed</span>
+                      </div>
+                      <p className="text-sm text-on-surface-variant mb-3 leading-relaxed">
+                        Built predictive model using Random Forest Classifier for agricultural optimization. Processes environmental and soil data to predict optimal crop types, improving farming efficiency and resource allocation.
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        <span className="text-[10px] bg-background px-3 py-1 rounded border border-primary/30 text-primary">Python</span>
+                        <span className="text-[10px] bg-background px-3 py-1 rounded border border-secondary/30 text-secondary">Scikit-learn</span>
+                        <span className="text-[10px] bg-background px-3 py-1 rounded border border-secondary/30 text-secondary">Random Forest</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Core Competencies */}
+                <div>
+                  <h2 className="text-lg font-bold text-primary mb-3 border-b border-outline/30 pb-2">KEY COMPETENCIES</h2>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    <div className="text-sm">
+                      <span className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-lg font-bold">Autonomous Agents</span>
+                    </div>
+                    <div className="text-sm">
+                      <span className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-lg font-bold">LLM Integration</span>
+                    </div>
+                    <div className="text-sm">
+                      <span className="inline-block bg-secondary/10 text-secondary px-3 py-1 rounded-lg font-bold">RAG Pipeline</span>
+                    </div>
+                    <div className="text-sm">
+                      <span className="inline-block bg-secondary/10 text-secondary px-3 py-1 rounded-lg font-bold">NLP Systems</span>
+                    </div>
+                    <div className="text-sm">
+                      <span className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-lg font-bold">Data Pipelines</span>
+                    </div>
+                    <div className="text-sm">
+                      <span className="inline-block bg-secondary/10 text-secondary px-3 py-1 rounded-lg font-bold">ML Deployment</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Education */}
+                <div>
+                  <h2 className="text-lg font-bold text-primary mb-3 border-b border-outline/30 pb-2">EDUCATION</h2>
+                  <div className="bg-surface/50 p-5 rounded-xl border border-outline/20">
+                    <h4 className="font-bold">Bachelor of Engineering - Computer Science</h4>
+                    <p className="text-sm text-secondary font-semibold mt-1">Specialization: Artificial Intelligence & Machine Learning</p>
+                    <p className="text-sm text-on-surface-variant mt-2">Focus Areas: Neural Networks, Natural Language Processing, Autonomous Systems, Data Science</p>
+                  </div>
+                </div>
+
+                {/* Certifications */}
+                <div>
+                  <h2 className="text-lg font-bold text-primary mb-3 border-b border-outline/30 pb-2">EXPERTISE AREAS</h2>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-3">
+                      <span className="text-primary font-bold mt-1">▸</span>
+                      <span className="text-sm">Building scalable autonomous AI systems and agentic workflows</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-primary font-bold mt-1">▸</span>
+                      <span className="text-sm">Designing production-ready LLM applications with robust error handling</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-primary font-bold mt-1">▸</span>
+                      <span className="text-sm">Implementing advanced RAG systems with semantic search and retrieval</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-primary font-bold mt-1">▸</span>
+                      <span className="text-sm">Data engineering and ETL pipeline optimization</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-primary font-bold mt-1">▸</span>
+                      <span className="text-sm">Full-stack ML model development and deployment</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-primary font-bold mt-1">▸</span>
+                      <span className="text-sm">Cross-functional collaboration with product and engineering teams</span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Call to Action */}
+                <div className="border-t border-outline/30 pt-6 text-center">
+                  <p className="text-sm text-on-surface-variant mb-4">
+                    Seeking opportunities to collaborate on cutting-edge AI projects, neural research, and autonomous systems development.
+                  </p>
+                  <p className="text-xs font-bold tracking-widest text-primary">
+                    LET'S BUILD THE FUTURE OF AI TOGETHER
+                  </p>
+                </div>
               </div>
             </div>
 
